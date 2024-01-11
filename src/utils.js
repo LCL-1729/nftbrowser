@@ -16,7 +16,7 @@ export const getContractNFTs = async (tokenAddress) => {
       },
     });
     return response.json();
-  };
+};
   
   
 export const getContractTrades = async (tokenAddress) => {
@@ -33,7 +33,7 @@ export const getContractTrades = async (tokenAddress) => {
       },
     });
     return response.json();
-  };
+};
   
   
 export const getNFTTransfers = async (tokenAddress, tokenId) => {
@@ -52,5 +52,5 @@ export const getNFTTransfers = async (tokenAddress, tokenId) => {
       },
     });
     return response.json();
-  };
+};
   
