@@ -19,7 +19,7 @@ export const getContractNFTs = async (tokenAddress) => {
   };
   
   
-  export const getContractTrades = async (tokenAddress) => {
+export const getContractTrades = async (tokenAddress) => {
     const url = new URL(`${origin}/api/v2/nft/${tokenAddress}/trades`);
     url.searchParams.append("chain", "eth");
     url.searchParams.append("marketplace", "opensea");
@@ -36,7 +36,7 @@ export const getContractNFTs = async (tokenAddress) => {
   };
   
   
-  export const getNFTTransfers = async (tokenAddress, tokenId) => {
+export const getNFTTransfers = async (tokenAddress, tokenId) => {
     const url = new URL(
       `${origin}/api/v2/nft/${tokenAddress}/${tokenId}/transfers`
     );
