@@ -1,21 +1,27 @@
 import { Button, Card, Input, Layout, List, message } from "antd";
 import { useState } from "react";
-import { getContractNFTs} from "./utils";
+import { getContractNFTs } from "./utils";
 import "./App.css";
+import NftCard from "./components/NftCard";
+
 
 const { Header, Content } = Layout;
+
 
 function App() {
   const [nfts, setNfts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
 
+
   const handleSearch = async () => {
     if (searchText === "") {
       return;
     }
 
+
     setLoading(true);
+
 
     try {
       const data = await getContractNFTs(searchText);
@@ -26,6 +32,7 @@ function App() {
       setLoading(false);
     }
   };
+
 
   return (
     <Layout style={{ height: "100vh" }}>
@@ -64,16 +71,13 @@ function App() {
             xl: 4,
             xxl: 4,
           }}
-          dataSource={[1, 2, 3]}
-          renderItem={(nft) => (
-            <List.Item key={nft}>
-              <Card title={nft} />
-            </List.Item>
-          )}
+          dataSource={nfts}
+          renderItem={(nft) => <NftCard nft={nft} />}
         />
       </Content>
     </Layout>
   );
 }
+
 
 export default App;
