@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import { getContractNFTs } from './utils';
 
 function App() {
+  useEffect( () => {
+    getContractNFTs("0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D")
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
